@@ -1,0 +1,23 @@
+{
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.spec.js",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "incremental": false,
+    "declaration": true,
+    "sourceMap": false,
+    "module": "CommonJS",
+    "target": "ES6",
+    "lib": ["ESNext"],
+    "outDir": "dist",
+    "baseUrl": ".",
+  }
+}
