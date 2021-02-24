@@ -1,10 +1,18 @@
-# build
+# ts
 tsconfig.json
-coverage
+**/*.ts
+*.ts
 
-# eslint
+# project
+.DS_Store
+.idea/
+.gitignore
+.prettierrc
+.travis.yml
 .eslintrc.*
 
-# src
-src
-test
+# build
+/coverage
+/test
+/node_modules
+/.vscode
