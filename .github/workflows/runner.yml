@@ -1,0 +1,61 @@
+name: workflow
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: USE NODEJS ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: INIT & LINT
+      run: |
+        yarn
+        yarn lint
+        sudo apt-get install xvfb
+
+    - name: CLEANUP
+      uses: bcomnes/cleanup-xvfb@v1
+
+    # ding md @see: https://developers.dingtalk.com/document/app/message-types-and-data-format?spm=ding_open_doc.document.0.0.7f875e597S7HUg#topic-1945727
+    # args @see: https://docs.github.com/cn/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#github-context
+    - name: FLOW FAIL
+      if: ${{ failure() }}
+      run: |
+        curl ${{ secrets.WEBHOOK_URL }} \
+          -H 'Content-Type: application/json' \
+          -d '{
+            "msgtype": "markdown",
+            "markdown": {
+              "title": "CI BUILD FAIL",
+              "text": "CI BUILD FAIL  \n  > [${{ github.repository }}](https://github.com/sophons-space/redis/actions/runs/${{ github.run_id }}) -- BY ${{ github.actor }}"
+            }
+          }'
+
+    - name: FLOW SUCCESS
+      if: ${{ success() }}
+      run: |
+        curl ${{ secrets.WEBHOOK_URL }} \
+          -H 'Content-Type: application/json' \
+          -d '{
+            "msgtype": "markdown",
+            "markdown": {
+              "title": "CI BUILD SUCCESS",
+              "text": "CI BUILD SUCCESS  \n  > [${{ github.repository }}](https://github.com/sophons-space/redis/actions/runs/${{ github.run_id }}) -- BY ${{ github.actor }}"
+            }
+          }'

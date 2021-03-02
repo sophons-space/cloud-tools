@@ -1,0 +1,61 @@
+{
+	"name": "@sophons/cloud-tools",
+	"version": "1.0.1",
+	"author": "chogath",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"description": "☁️ provide the best cloud-tools development plug-in for node.js server",
+	"keywords": [
+		"serverless",
+		"cloud",
+		"aliyun",
+		"sls",
+		"logger"
+	],
+	"homepage": "https://github.com/sophons-space/cloud-tools#readme",
+	"bugs": {
+		"url": "https://github.com/sophons-space/cloud-tools/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sophons-space/cloud-tools"
+	},
+	"scripts": {
+		"build": "tsc",
+		"test": "jest",
+		"test:coverage": "jest --coverage",
+		"lint": "eslint \"{src,test}/**/*.ts\"",
+		"update:version": "tsc && npm version patch && npm publish --access public"
+	},
+	"jest": {
+		"testEnvironment": "node",
+		"coverageDirectory": "coverage",
+		"testRegex": "(/test/.spec.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+		"transform": {
+			"^.+\\.js$": "babel-jest",
+			"^.+\\.ts$": "ts-jest"
+		},
+		"transformIgnorePatterns": [
+			"./node_modules/(?!(lodash-es|other-es-lib))"
+		]
+	},
+	"dependencies": {
+		"aliyun-sdk": "^1.12.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.10.5",
+		"@babel/preset-env": "^7.10.4",
+		"@types/jest": "^26.0.15",
+		"@typescript-eslint/eslint-plugin": "^4.6.0",
+		"@typescript-eslint/parser": "^4.6.0",
+		"babel-jest": "^26.1.0",
+		"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+		"eslint": "^7.12.1",
+		"jest": "^26.6.3",
+		"ts-jest": "^26.4.4",
+		"ts-node": "^9.0.0",
+		"typescript": "4.0.5",
+		"codecov": "^3.8.1"
+	}
+}

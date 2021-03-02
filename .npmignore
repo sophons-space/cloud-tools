@@ -1,0 +1,22 @@
+# ts
+tsconfig.json
+/src
+
+# project
+.DS_Store
+.idea/
+.gitignore
+.prettierrc
+.travis.yml
+.eslintrc.*
+.github
+setting.sh
+setting.json
+setting.*
+
+# build
+/coverage
+/test
+/node_modules
+/.vscode
+/docs
