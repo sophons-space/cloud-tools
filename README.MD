@@ -12,6 +12,7 @@
 ![](https://badgen.net/npm/dm/@sophons/cloud-tools)
 [![install size](https://packagephobia.com/badge?p=@sophons/cloud-tools)](https://packagephobia.com/result?p=@sophons/cloud-tools)
 ![](https://img.shields.io/npm/l/@sophons/cloud-tools.svg)
+[![Known Vulnerabilities](https://snyk.io/test/npm/@sophons/cloud-tools/badge.svg)](https://snyk.io/test/npm/@sophons/cloud-tools)
 
 ## Features
 
