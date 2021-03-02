@@ -48,12 +48,6 @@ cnpm install @sophons/cloud-tools
 
 [English Docs](docs/en.md) | [中文文档](docs/cn.md)
 
-## Online one-click setup
-
-You can use Gitpod an online IDE(which is free for Open Source) for contributing or running the examples online.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/axios/axios/blob/master/examples/server.js)
-
 ## License
 
 [MIT](LICENSE)
