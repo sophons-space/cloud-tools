@@ -6,7 +6,6 @@
 
 ![ci](https://github.com/sophons-space/cloud-tools/workflows/workflow/badge.svg)
 [![codecov](https://codecov.io/gh/sophons-space/cloud-tools/branch/master/graph/badge.svg)](https://codecov.io/gh/sophons-space/cloud-tools)
-[![gitpod](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/sophons-space/cloud-tools) 
 ![npm](https://img.shields.io/npm/v/@sophons/cloud-tools)
 ![](https://badgen.net/npm/types/@sophons/cloud-tools)
 ![](https://badgen.net/npm/dm/@sophons/cloud-tools)
