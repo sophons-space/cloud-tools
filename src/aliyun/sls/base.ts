@@ -23,7 +23,7 @@ export class Logger implements SLSLogger {
     const time = Math.floor(new Date().getTime() / 1000);
 
     try {
-      await new Promise(() => {
+      await new Promise((res, rej) => {
         this.logger.putLogs(
           {
             logGroup: {
@@ -33,6 +33,9 @@ export class Logger implements SLSLogger {
             },
             projectName: this.options.project,
             logStoreName: this.options.logStore,
+          },
+          (error: Error) => {
+            error ? rej(error) : res(null);
           },
         );
       });

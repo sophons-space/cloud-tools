@@ -26,10 +26,24 @@ test('Aliyun.SLS - no options', async () => {
   }
 });
 
+test('Aliyun.SLS - logStore', async () => {
+  try {
+    const options = { ...getOptions(), logStore: '1' };
+    const logger = new Aliyun.SLS.Logger('test', options);
+    await logger.error('Aliyun.SLS - error');
+  } catch (error) {
+    expect(1).toBe(1);
+  }
+});
+
 test('Aliyun.SLS - error', async () => {
-  const options = { ...getOptions(), endpoint: '' };
-  const logger = new Aliyun.SLS.Logger('test', options);
-  logger.error('Aliyun.SLS - error');
+  try {
+    const options = { ...getOptions(), endpoint: '' };
+    const logger = new Aliyun.SLS.Logger('test', options);
+    await logger.error('Aliyun.SLS - error');
+  } catch (error) {
+    expect(1).toBe(1);
+  }
 });
 
 test('Aliyun.SLS', async () => {
@@ -39,5 +53,5 @@ test('Aliyun.SLS', async () => {
   logger.warn('Aliyun.SLS');
   logger.debug('Aliyun.SLS');
   logger.error('Aliyun.SLS');
-  logger.error('Aliyun.SLS');
+  await logger.error('Aliyun.SLS');
 });
