@@ -16,4 +16,13 @@ logger.error('Aliyun.SLS', ip);
 
 ### options
 
-《[ SLS Options 👀 ](https://help.aliyun.com/document_detail/29064.html?spm=a2c4g.11186623.6.1321.5e165a77DkTXpo)》
+```ts
+const options = {
+  "apiVersion": "2015-06-01", // 固定值
+  "accessKeyId": "",
+  "secretAccessKey": "",
+  "endpoint": "http://cn-hangzhou.log.aliyuncs.com", // 地域，以服务入口杭州为例
+  "project": "", // 项目
+  "logStore": "" // 存储空间
+}
+```
